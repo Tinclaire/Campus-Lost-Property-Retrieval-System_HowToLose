@@ -1,0 +1,85 @@
+body{
+    margin: 0;
+}
+.nav img{
+    height: 3rem;
+    width: 2.4rem;
+}
+
+.nav{
+    background-color: rgb(238,247,254);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+    padding: 0 1rem;
+    /* width: 100%; */
+    position: sticky;
+    margin: 0;
+    /* top: 0;
+    left: 0;
+    right: 0;
+    position: fixed;
+    margin-bottom: 5rem; */
+}
+.nav ul{
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+    position: relative;
+    /* justify-content: space-evenly; */
+}
+.nav li{
+    display: flex;
+    /* flex-direction: column; */
+    align-items: center;
+    position: relative;
+    /* align-self: flex-end; */
+    /* font-family: Microsoft JhengHei; */
+    /* font-size: 10pt; */
+}
+
+.nav a{
+    text-decoration: none;
+    height: 100%;
+    align-items: center;
+    display: flex;
+    /* padding: .25rem; */
+}
+
+.site-title{
+    font-size: 3rem;
+    align-self: center;
+    font-family: fantasy;
+    color: rgb(128, 128, 128);
+    /* align-self: flex-end; */
+}
+/* .nav li.active{
+    color: lightblue;
+} */
+.nav li:hover{
+    /* background-color: lack; */
+    top: -5px;
+}
+
+.nav li a.d{
+    font-family: Microsoft JhengHei;
+    font-size: 10pt;
+    align-self: flex-end;
+    color:rgb(128, 128, 128);
+}
+
+.icon{
+    color: rgb(128, 128, 128);
+    font-size: 1.5em;
+}
+.nav li a.active{
+    color: rgb(189, 12, 12);
+}
+
+.icona{
+    color: black;
+    font-size: 1.5em;
+}

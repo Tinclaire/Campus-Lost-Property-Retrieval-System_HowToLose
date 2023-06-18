@@ -1,0 +1,128 @@
+.postContent {
+    display: flex;
+    flex-direction: column;
+    background-color: aliceblue;
+    /* background-color: antiquewhite; */
+    /* border-color: rgb(238, 238, 47);
+    border-width: 10px; */
+    /* border: 3px solid rgb(81, 174, 205); */
+    border-radius: 10px;
+    margin: 1rem;
+    padding: 2rem;
+}
+
+.info_report {
+    display: flex;
+    justify-content: space-between;
+}
+
+.userInfo {
+    display: flex;
+    /* justify-content: space-between; */
+    align-items: center;
+}
+
+.userInfo img {
+    border-radius: 50%;
+    width: 35px;
+    height: 35px;
+    object-fit: contain;
+}
+
+.avatarContent {
+    border-radius: 50%;
+    /* background-image: url('./image/logo.jpg');
+    background-repeat: no-repeat; */
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    /* flex-direction: row; */
+
+    width: 40px;
+    height: 40px;
+
+    border: 1.5px solid rgb(81, 174, 205);
+    /* border-color: black;
+    border-width: 4px; */
+    /* background-color: black; */
+}
+
+.avatar_Cimage {
+    /* Size */
+    height: 50%;
+    width: 50%;
+}
+
+.userId {
+    font-weight: bold;
+    color: rgb(56, 56, 56);
+}
+
+.comment {
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+    background-color: aliceblue;
+    margin: 1rem;
+    padding: 2rem;
+}
+
+.input {
+    display: flex;
+    position: fixed;
+    background-color: rgb(81, 174, 205);
+    width: 100%;
+    /* margin-left: 0; */
+    /* margin-right: 0; */
+    /* margin-bottom: 0; */
+    /* margin-top: 2rem; */
+    padding-top: 10px;
+    padding-bottom: 10px;
+    justify-content: center;
+    align-items: center;
+    /* gap: 10px; */
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+.enter {
+    margin: 0 1.4% 0 0;
+    width: 8%;
+}
+
+textarea {
+    border-radius: 5px;
+    /* border-color: rgb(128, 128, 128); */
+    border-color: transparent;
+    margin: 0 1.4%;
+}
+
+.space {
+    width: 1rem;
+}
+
+.report_icon {
+    font-size: 23px;
+    color: red;
+}
+
+.titleC {
+    margin: 10px 0;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    /* column-gap: 10px; */
+    line-height: 40px;
+}
+
+.text {
+    padding-left: 59px;
+    line-height: 30px;
+}
+
+.type {}

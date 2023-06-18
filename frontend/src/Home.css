@@ -1,0 +1,153 @@
+@keyframes scaleDraw {  /*定義關鍵幀、scaleDrew是需要繫結到選擇器的關鍵幀名稱*/
+    0%{
+        transform: scale(1);  /*開始為原始大小*/
+    }
+    25%{
+        transform: scale(1.1); /*放大1.1倍*/
+    }
+    50%{
+        transform: scale(1);
+    }
+    75%{
+        transform: scale(1.1);
+    }
+}
+
+.logo{
+    max-width: 35%;
+    max-height: 35%;
+    top: 0;
+    left: 0;
+    -webkit-animation-name: scaleDraw; /*關鍵幀名稱*/
+    -webkit-animation-timing-function: ease-in-out; /*動畫的速度曲線*/
+    -webkit-animation-iteration-count: infinite;  /*動畫播放的次數*/
+    -webkit-animation-duration: 5s; /*動畫所花費的時間*/
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    width: 40%;;
+    height: 95%;
+    border-radius: 10px;
+    background-color: rgb(238,247,254);
+    /*水平對齊*/
+    justify-content: center;
+    /*垂直對齊*/
+    align-items: center;
+    /*多行置中*/
+    align-content: center;
+    flex-direction: column;
+    /* height: auto; */
+    /* position: relative; */
+    /* overflow: overlay; */
+    /* top: 3%; */
+    /* overflow-y: scroll; */
+  } 
+  .container img {
+    object-fit: fill;
+    position: relative;
+    /* top: 0;
+    left: 0; */
+    /*bottom: 0;
+    left: 0;
+    right: 0; */
+  }
+
+.title{
+    text-align: center;
+    color: rgb(118, 118, 163);
+    font-size: 40pt;
+    /* font-family:serif; */
+    font-family: fantasy;
+    text-shadow: rgb(205, 204, 204) 0.1em 0.1em 0.1em; /*第三個是陰影模糊 其他是跟字的距離*/
+    /* font-family: Franklin Gothic Medium; */
+    /* font-weight: bold; */
+}
+.subTitle{
+    font-family:Microsoft JhengHei;
+    /* font-family: monospace; */
+    font-size: 15pt;
+    color: rgb(128, 128, 128);
+    text-align: center;
+}
+.small{
+    font-size: 10pt;
+    font-family:Microsoft JhengHei;
+    color: rgb(128, 128, 128);
+    text-align: center;
+    animation: 1s blink-smooth infinite alternate;
+    animation-timing-function: ease-in-out, /*緩慢開始&結束*/
+}
+@keyframes blink-smooth {
+    to {
+      /* color: rgb(196, 196, 196); */
+      color: transparent;
+    }
+  }
+
+/*類似span的功能*/
+.pp{
+    height: 1%;
+}
+
+button{
+    width: 23.5%;
+    height: 8%;
+    background-color: #ffbd59;
+    /* font-family: fantasy; */
+    font-size: larger;
+    font-weight: bold;
+    /* font-family: monospace; */
+    color: #fff;
+    border-radius: 10px;
+    /* border: 3px #faa11d solid; */
+    border: 0;
+    cursor: pointer; /*游標在上面的時候會變圖案*/
+}
+
+button:hover{
+    color:#fff;
+  background-color:#f6b1e1;
+  /* border:2px #fff solid; */
+}
+
+/* .play{
+    max-width: 12%;
+    max-height: 12%;
+    border-radius: 50%;
+    z-index: 0;
+    top: 0;
+    left: 0;
+} */
+
+/* .span{
+    position: absolute;
+    max-width: 15%;
+    max-height: 15%;
+    left: 0;
+    bottom: 0;
+    background: #111111;
+    border-radius: 50%;
+    -webkit-animation: living 3s linear infinite;
+    z-index: -1;
+} */
+
+/* .span:nth-child(2){
+    -webkit-animation-delay: 1.5s; 第二個span動畫延遲1.5秒
+} */
+
+/* @keyframes living {
+    0%{
+        transform: scale(1);
+        opacity: 0.5;  
+    }
+    50%{
+        transform: scale(1.5);  
+        opacity: 0;   圓形放大的同時，透明度逐漸減小為0
+    }
+    100%{
+        transform: scale(1);
+        opacity: 0.5;
+    }
+} */

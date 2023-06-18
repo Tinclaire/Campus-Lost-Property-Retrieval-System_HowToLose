@@ -1,0 +1,90 @@
+/*設定最主要背景*/
+.bg{
+  background-color: lightblue;
+  /*滿版設計*/
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: -999;
+  display: flex;
+  /*水平對齊*/
+  justify-content: center;
+  /*垂直對齊*/
+  align-items: center;
+  overflow-y: scroll;
+  /* min-height: 100vh; */
+}
+
+.windowBg{
+  background-color: rgb(238,247,254);
+  display: flex;
+  /* border:  3px solid #666; */
+  width: 70%;;
+  height: 90%;
+  border-radius: 10px;
+  flex-direction: column;
+  flex-wrap: wrap;
+  /*左右置中*/
+  /* vertical-align: middle; */
+  margin: 0 auto;
+  margin-top: 2%;
+  margin-bottom: 2%;
+  align-items: center;
+  justify-content: center;
+
+}
+.App {
+  /* display: */
+  text-align: center;
+  /* display: flex; */
+  /* min-height: 100vh; */
+  align-items: center;
+  justify-content: center;
+  background-color: lightblue;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.locationSel{
+  width: 100%;
+  border: 1px solid white;
+  height: 50px;
+  border-radius: 10px;
+  font-size: 16px;
+}
+

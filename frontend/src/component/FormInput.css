@@ -1,0 +1,184 @@
+.formInput{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+input{
+    padding: 15px;
+    margin: 10px 0px;
+}
+
+span{
+    font-size: 14px;
+    padding: 3px;
+    color: red;
+    display: none;
+}
+
+input:invalid[focused="true"]{
+    border: 1px solid red;
+}
+
+input:invalid[focused="true"] ~ span{
+    display: block;
+
+}
+
+.App {
+    text-align: center;
+    display: flex;
+    min-height: 100vh;
+    align-items: center;
+    justify-content: center;
+    background-color: lightblue;
+  }
+  
+  /* .auth-form-container, .login-form, .register-form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .auth-form-container{
+    padding: 5rem;
+    border: 1px solid white;
+    border-radius: 10px;
+    margin: 1rem;
+  } */
+  
+  label{
+    text-align: left;
+    padding: 0.25rem 0;
+  }
+  
+  input{
+    margin: 0.5rem 0;
+    padding: 1rem;
+    border-radius: 10px;
+    border: 1px solid gray;
+  }
+  
+  .buttonLR{
+    border-width:1px;
+    background-color: #ffbd59;
+    padding:15px;
+    border-radius: 10px;
+    width: 100%;
+    /* height: 30%; */
+    font-weight: bold;
+    font-size: 18px;
+    margin-top: 30px;
+    cursor: pointer;
+  }
+  .buttonConfirm{
+    border-width:1px;
+    background-color: #98d4af;
+    /* background-color: #ffbd59; */
+    padding:15px;
+    border-radius: 10px;
+    width: 100%;
+    /* height: 30%; */
+    font-weight: bold;
+    font-size: 18px;
+    margin-top: 30px;
+    cursor: pointer;
+  }
+  .buttonCancel{
+    border-width:1px;
+    /* background-color: #98d4af; */
+    background-color: #ffbd59;
+    padding:15px;
+    border-radius: 10px;
+    width: 100%;
+    /* height: 30%; */
+    font-weight: bold;
+    font-size: 18px;
+    margin-top: 30px;
+    cursor: pointer;
+  }
+  
+  .link-btnR{
+    background: none;
+    font-weight: bold;
+    color: gray;
+    text-decoration: underline;
+    border: none;
+    padding: 20px;
+    margin: 40px;
+    text-align: center;
+  }
+  .link-btnL{
+    background: none;
+    font-weight: bold;
+    color: gray;
+    text-decoration: underline;
+    border: none;
+    padding: 20px;
+    margin: 56px;
+    text-align: center;
+  }
+  
+  .location{
+    text-align: left;
+  }
+  
+  .locationSel{
+    width: 100%;
+    border: 1px solid white;
+    height: 50px;
+    border-radius: 10px;
+    font-size: 16px;
+  }
+  .change{
+    flex-direction: row;
+    display: flex;
+  }
+  
+  form{
+    padding: 5rem;
+    border: 1px solid white;
+    border-radius: 10px;
+    margin: 1rem 23.5rem;
+    background-color: rgb(238,247,254);
+  }
+  .formPost{
+    padding: 5rem;
+    border: 1px solid white;
+    border-radius: 10px;
+    margin: 1.5rem 10rem;
+    background-color: rgb(238,247,254);
+  }
+  .formChange{
+    padding: 0.3rem 5rem 2rem 5rem;
+    border: 1px solid white;
+    border-radius: 10px;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+    /* margin-left: 1rem;
+    margin-right: 50rem; */
+    background-color: rgb(238,247,254);
+  }
+  .formPw{
+    padding: 0.3rem 5rem 2rem 5rem;
+    border: 1px solid white;
+    border-radius: 10px;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+    /* margin-right: 1rem;
+    margin-left: 50rem; */
+    background-color: rgb(238,247,254);
+  }
+  h1{
+    color:rgb(53, 53, 188);
+    text-align: center;
+  }
+
+  .logout{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .span{
+    height: 2rem;
+  }
