@@ -3,6 +3,11 @@ WORKDIR /app
 COPY ./package*.json .
 RUN npm install
 COPY . .
+# With ARG and ENV, you can use:
+# `docker build --build-arg REACT_APP_API=http://localhost . -t repo/image:tag`
+# to set ENV when building image.
+ARG REACT_APP_API
+ENV REACT_APP_API=$REACT_APP_API
 RUN npm run build
 
 FROM nginx
