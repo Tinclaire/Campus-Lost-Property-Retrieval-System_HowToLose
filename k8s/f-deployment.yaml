@@ -17,16 +17,13 @@ spec:
         # track: stable
     spec:
       containers:
-        - name: h2l-f
-          image: tinclaire225/h2l
-          ports:
-            - name: f-port
-              containerPort: 80
-          env:
-            - name: REACT_APP_API
-              value: http://backend
-              # value: http://localhost/
-          # lifecycle:
-          #   preStop:
-          #     exec:
-          #       command: ["/usr/sbin/nginx","-s","quit"]
+      - name: h2l-f
+        image: cdxvy30/h2l-test # This is for test.
+        ports:
+        - name: f-port
+          containerPort: 80
+          # value: http://localhost/
+        # lifecycle:
+        #   preStop:
+        #     exec:
+        #       command: ["/usr/sbin/nginx","-s","quit"]
