@@ -1,18 +1,12 @@
-import React, { useState } from 'react';
-import { useEffect } from 'react';
 import axios from 'axios';
-import './App.css';
-import './Personal.css';
-import { BsFillPersonFill } from "react-icons/bs";
-import { AiFillHome } from "react-icons/ai";
-import { MdFavorite } from "react-icons/md";
-import logo from './image/logo.jpg';
-import NavBar from './NavBar';
-import { BsFillPencilFill } from "react-icons/bs";
-import react from './logo.svg';
+import React, { useEffect, useState } from 'react';
+import { useCookies } from 'react-cookie';
 import { FaComment } from "react-icons/fa";
 import { Navigate } from 'react-router-dom';
-import { useCookies } from 'react-cookie';
+import './App.css';
+import NavBar from './NavBar';
+import './Personal.css';
+import logo from './image/logo.jpg';
 
 function Personal(props) {
     const [goTo, setGoTo] = React.useState(false)
@@ -21,7 +15,7 @@ function Personal(props) {
     const [user, setUser] = useState({})
 
     useEffect(() => {
-        axios.get('http://localhost:8080/api/posts/personallist', { headers: { "Content-Type": "application/json", "token": cookies.token } })
+        axios.get(`${process.env.REACT_APP_API}/api/posts/personallist`, { headers: { "Content-Type": "application/json", "token": cookies.token } })
             .then(res => {
                 // setItems(res.data)
                 console.log(res);
@@ -30,7 +24,7 @@ function Personal(props) {
     }, [])
 
     useEffect(() => {
-        axios.get('http://localhost:8080/api/user/personal', { headers: { "Content-Type": "application/json", "token": cookies.token } })
+        axios.get(`${process.env.REACT_APP_API}/api/user/personal`, { headers: { "Content-Type": "application/json", "token": cookies.token } })
             .then(res => {
                 // setItems(res.data)
                 console.log(res);
@@ -92,7 +86,7 @@ function Post({ title, thing, location, cn, goTo, ln, idp, list, id}) { //ln, id
                     <FaComment className='post-icon' />
                     <div className='number'>{cn}</div>
                 </div>
-                <a type="button" className='goto' href={"http://localhost:3000/main/content/" +id}>去看看</a>
+                <a type="button" className='goto' href={"/main/content/" +id}>去看看</a>
                 {/* <button className='goto' onClick={goTo}>去看看</button> */}
             </div>
         </div>

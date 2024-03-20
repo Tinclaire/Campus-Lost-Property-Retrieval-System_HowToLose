@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: frontend3
+spec:
+  selector:
+    matchLabels:
+      app: h2l
+      tier: frontend
+      # track: stable
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: h2l
+        tier: frontend
+        # track: stable
+    spec:
+      containers:
+        - name: h2l-f
+          image: tinclaire225/h2l
+          ports:
+            - name: f-port
+              containerPort: 80
+          env:
+            - name: REACT_APP_API
+              value: http://backend
+              # value: http://localhost/
+          # lifecycle:
+          #   preStop:
+          #     exec:
+          #       command: ["/usr/sbin/nginx","-s","quit"]

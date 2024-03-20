@@ -1,10 +1,8 @@
-import { useState } from "react";
-import FormInput from "./component/FormInput";
-import React from "react";
-import { Navigate } from 'react-router-dom';
-import { Link } from 'react-router-dom';
-import { useCookies } from 'react-cookie'
+import React, { useState } from "react";
+import { useCookies } from 'react-cookie';
+import { Link, Navigate } from 'react-router-dom';
 import PopUp from "./PopUp";
+import FormInput from "./component/FormInput";
 
 function Login(props) {
   const [values, setValues] = useState({
@@ -94,7 +92,7 @@ function Login(props) {
 };
 
 async function login(values) {
-  const data = await fetch('http://localhost:8080/api/user/login',
+  const data = await fetch(`${process.env.REACT_APP_API}/api/user/login`,
     {
       method: "POST",
       body: JSON.stringify(values),

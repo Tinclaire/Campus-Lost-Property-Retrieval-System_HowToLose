@@ -63,6 +63,8 @@ public class HowToLose1Application implements CommandLineRunner{
 		this.commentRepository.save(c);
 		this.commentRepository.save(cc);
 		this.commentRepository.save(ccc);
+		
+		System.out.println(tintin.getName());
 	}
 
 }

@@ -1,0 +1,27 @@
+# apiVersion: v1
+# kind: Service
+# metadata:
+#   name: f-service
+# spec:
+#   ports:
+#   - port: 4800
+#     nodePort: 30348
+#     protocol: TCP
+#     targetPort: f-port
+#   selector:
+#     app: f
+#   type: NodePort
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: frontend3
+spec:
+  selector:
+    app: h2l
+    tier: frontend
+  ports:
+  - protocol: "TCP"
+    port: 80
+    targetPort: 80
+  type: NodePort

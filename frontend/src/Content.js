@@ -1,21 +1,13 @@
-import React, { useState } from "react";
-import { useEffect } from "react";
 import axios from "axios";
-import NavBar from "./NavBar";
+import React, { useEffect, useState } from "react";
+import { useCookies } from 'react-cookie';
 import { MdOutlineReportProblem } from "react-icons/md";
 import { Link, useParams } from 'react-router-dom';
 import './Content.css';
-import { useCookies } from 'react-cookie';
-import Cookies from "react-cookie";
-import logo from './image/logo.jpg'
-import panda from './image/panda.jpg'
-import dog from './image/dog.jpg'
-import bear from './image/bear.jpg'
-import pet1 from './image/pet1.jpg'
-import pet2 from './image/pet2.jpg'
-import pet3 from './image/pet3.jpg'
-import pet4 from './image/pet4.jpg'
-import pet5 from './image/pet5.jpg'
+import NavBar from "./NavBar";
+import bear from './image/bear.jpg';
+import panda from './image/panda.jpg';
+import pet2 from './image/pet2.jpg';
 
 const Content = () => {
     const params = useParams()
@@ -28,7 +20,7 @@ const Content = () => {
     // const [id]
 
     useEffect(() => {
-        axios.get('http://localhost:8080/api/posts/post', { headers: { "Content-Type": "application/json", "id": postId } })
+        axios.get(`${process.env.REACT_APP_API}/api/posts/post`, { headers: { "Content-Type": "application/json", "id": postId } })
             // .then(res => JSON.stringify(res))
             .then(res => {
                 // setItems(res.data)
@@ -39,7 +31,7 @@ const Content = () => {
     }, [])
 
     useEffect(() => {
-        axios.get('http://localhost:8080/api/comment/conc', { headers: { "Content-Type": "application/json", "id": postId } })
+        axios.get(`${process.env.REACT_APP_API}/api/comment/conc`, { headers: { "Content-Type": "application/json", "id": postId } })
             // .then(res => JSON.stringify(res))
             .then(res => {
                 // setItems(res.data)
@@ -127,7 +119,7 @@ function Comments({ userLogo, id, text, bx }) { //bx是B1, B2, B3...
 
 async function goToBackend(values, token, id) {
     console.log('value:' + values, 'token: ' + token, 'id: ' + id)
-    axios.post('http://localhost:8080/api/comment/saysomething', { values: values }, { headers: { "Content-Type": "application/json", "token": token, "id": id } })
+    axios.post(`${process.env.REACT_APP_API}/api/comment/saysomething`, { values: values }, { headers: { "Content-Type": "application/json", "token": token, "id": id } })
         .then(res => console.log(res))
         .catch(err => console.log(err.message))
 }

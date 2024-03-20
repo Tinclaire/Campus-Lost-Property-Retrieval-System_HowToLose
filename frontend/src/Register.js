@@ -1,9 +1,7 @@
-import { useState } from "react";
-import FormInput from "./component/FormInput";
-import React from "react";
-import { Navigate } from 'react-router-dom';
-import { Link } from 'react-router-dom';
+import React, { useState } from "react";
+import { Link, Navigate } from 'react-router-dom';
 import PopUp from "./PopUp";
+import FormInput from "./component/FormInput";
 
 function Register(props) {
   const [values, setValues] = useState({
@@ -124,7 +122,7 @@ function Register(props) {
   );
 };
 async function register(values) {
-  await fetch('http://localhost:8080/api/user/register',
+  await fetch(`${process.env.REACT_APP_API}/api/user/register`,
     {
       method: "POST",
       body: JSON.stringify(values),

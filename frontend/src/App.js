@@ -1,20 +1,16 @@
 import React from 'react';
-import logo from './logo.svg';
-import rabbit from './image/logo.jpg';
+import { Route, Routes } from 'react-router-dom';
 import './App.css';
-import Home from './Home.js';
-import Personal from './Personal.js';
-import NavBar from './NavBar.js';
-import Main from './Main';
-import Setting from './Setting';
-import Post from './Post';
-import Find from './Find';
-import Lost from './Lost';
-import Login from './Login';
-import Register from './Register';
 import Content from './Content';
+import Find from './Find';
+import Home from './Home.js';
+import Login from './Login';
+import Lost from './Lost';
+import Personal from './Personal.js';
+import Post from './Post';
+import Register from './Register';
 import Report from './Report';
-import { Routes, Route } from 'react-router-dom';
+import Setting from './Setting';
 
 function App() {
 
@@ -49,7 +45,7 @@ function App() {
       {/* <NavBar/> */}
       {/* <Home /> */}
       <div>
-        <Routes>
+        <Routes basename="/">
           <Route path='/' element={<Home />} />
           <Route path='/main' element={<Find />} />
           <Route path='/main/find' element={<Find />} />

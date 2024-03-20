@@ -1,12 +1,9 @@
-import React, { useState } from "react";
-import { useEffect } from "react";
 import axios from "axios";
-import TabBar from "./TabBar";
-import { MdFavorite } from "react-icons/md";
-import logo from './image/logo.jpg';
+import React, { useEffect, useState } from "react";
 import { FaComment } from "react-icons/fa";
-import NavBar from "./NavBar";
 import { Navigate } from 'react-router-dom';
+import NavBar from "./NavBar";
+import TabBar from "./TabBar";
 
 
 function Lost(props){
@@ -14,7 +11,7 @@ function Lost(props){
     const [posts, setPosts] = useState([])
 
     useEffect(() => {
-        axios.get('http://localhost:8080/api/posts/lostlist')
+        axios.get(`${process.env.REACT_APP_API}/api/posts/lostlist`)
             .then(res => {
                 // setItems(res.data)
                 console.log(res);
@@ -56,7 +53,7 @@ function Post({title, thing, location, cn, goTo, id}){
                         <FaComment className='post-icon' />
                         <div className='number'>{cn}</div>
                     </div>
-                    <a type="button" className='goto' href={"http://localhost:3000/main/content/" +id}>去看看</a>
+                    <a type="button" className='goto' href={"./content/" +id}>去看看</a>
                     {/* <button className='goto' onClick={ goTo }>去看看</button> */}
                 </div>
             </div>

@@ -1,9 +1,8 @@
-import { useState } from "react";
-import React from "react";
-import FormInput from "./component/FormInput";
+import React, { useState } from "react";
+import { useCookies } from "react-cookie";
 import { Navigate } from 'react-router-dom';
 import NavBar from "./NavBar";
-import { useCookies } from "react-cookie";
+import FormInput from "./component/FormInput";
 
 function Report (props)  {
     const [values, setValues] = useState({
@@ -78,7 +77,7 @@ function Report (props)  {
   );
 };
 async function goToBackend(values, token){
-    await fetch('http://localhost:8080/api/report/action', {method: "POST", body: JSON.stringify(values), headers:{"Content-Type": "application/json", "token": token}})
+    await fetch(`${process.env.REACT_APP_API}/api/report/action`, {method: "POST", body: JSON.stringify(values), headers:{"Content-Type": "application/json", "token": token}})
       .then(res => console.log(res))
       .catch(err => console.log(err))
   }

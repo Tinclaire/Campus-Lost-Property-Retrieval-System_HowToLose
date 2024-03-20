@@ -1,9 +1,8 @@
-import React from "react";
-import NavBar from "./NavBar";
-import { useState } from "react";
-import FormInput from "./component/FormInput";
-import { Navigate } from "react-router-dom";
+import React, { useState } from "react";
 import { useCookies } from "react-cookie";
+import { Navigate } from "react-router-dom";
+import NavBar from "./NavBar";
+import FormInput from "./component/FormInput";
 
 
 function Post(props){
@@ -145,7 +144,7 @@ function Post(props){
     );
 }
 async function goToBackend(values, token){
-  await fetch('http://localhost:8080/api/posts/post', {method: "POST", body: JSON.stringify(values), headers:{"Content-Type": "application/json", "token": token}})
+  await fetch(`${process.env.REACT_APP_API}/api/posts/post`, {method: "POST", body: JSON.stringify(values), headers:{"Content-Type": "application/json", "token": token}})
     .then(res => console.log(res))
     .catch(err => console.log(err))
 }

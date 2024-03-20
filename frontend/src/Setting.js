@@ -1,11 +1,9 @@
-import React, { useEffect } from "react";
-import { useState } from "react";
-import FormInput from "./component/FormInput";
-import { Navigate } from 'react-router-dom';
-import { Link } from 'react-router-dom';
-import NavBar from "./NavBar";
+import React, { useEffect, useState } from "react";
 import { useCookies } from "react-cookie";
+import { Navigate } from 'react-router-dom';
+import NavBar from "./NavBar";
 import PopUp from "./PopUp";
+import FormInput from "./component/FormInput";
 
 function Setting(props) {
     const [values, setValues] = useState({
@@ -169,7 +167,7 @@ function Setting(props) {
 // }
 
 async function changeName(values, token) {
-    const data = await fetch('http://localhost:8080/api/user/changeName',
+    const data = await fetch(`${process.env.REACT_APP_API}/api/user/changeName`,
         {
             method: "POST",
             body: JSON.stringify(values),
@@ -184,7 +182,7 @@ async function changeName(values, token) {
 }
 
 async function changePww(values, token) {
-    const data = await fetch('http://localhost:8080/api/user/changePw',
+    const data = await fetch(`${process.env.REACT_APP_API}/api/user/changePw`,
         {
             method: "POST",
             body: JSON.stringify(values),

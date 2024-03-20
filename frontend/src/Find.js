@@ -1,19 +1,16 @@
-import React, { useEffect } from "react";
-import TabBar from "./TabBar";
-import NavBar from "./NavBar";
-import { MdFavorite } from "react-icons/md";
-import logo from './image/logo.jpg';
-import { FaComment } from "react-icons/fa";
-import { useState } from "react";
-import { Navigate } from 'react-router-dom';
 import axios from "axios";
+import React, { useEffect, useState } from "react";
+import { FaComment } from "react-icons/fa";
+import { Navigate } from 'react-router-dom';
+import NavBar from "./NavBar";
+import TabBar from "./TabBar";
 
 const Find = () => {
     const [goTo, setGoTo] = React.useState(false)
     const [posts, setPosts] = useState([])
 
     useEffect(() => {
-        axios.get('http://localhost:8080/api/posts/findlist')
+        axios.get(`${process.env.REACT_APP_API}/api/posts/findlist`)
             .then(res => {
                 // setItems(res.data)
                 console.log(res);
@@ -60,7 +57,7 @@ function Post({ title, thing, location, cn, goTo , id}) {
                         <MdFavorite className='post-icon' color='red'/>
                         <div className='number'>{ln}</div>
                     </div> */}
-                <a className='goto' href={"http://localhost:3000/main/content/" +id}>去看看</a>
+                <a className='goto' href={"/main/content/" +id}>去看看</a>
                 {/* <div>http://localhost:3000/main/find/content/{id}</div> */}
                 {/* <button className='goto' onClick={ goTo }>去看看</button> */}
             </div>
@@ -69,7 +66,7 @@ function Post({ title, thing, location, cn, goTo , id}) {
     // }
 }
 async function getFindList(){
-    const findList = await fetch('http://localhost:8080/api/posts/findlist',
+    const findList = await fetch(`${process.env.REACT_APP_API}/api/posts/findlist`,
         {method: "GET", headers:{"Content-Type": "application/json"}})
       .then(res => res.json())
       .then(data => data)
