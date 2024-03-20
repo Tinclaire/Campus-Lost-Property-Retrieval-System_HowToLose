@@ -1,2 +1,3 @@
 node_modules
-build
+# Here I comment /build because content in /build should be passed to next stage.
+# build
